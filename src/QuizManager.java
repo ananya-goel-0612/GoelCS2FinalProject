@@ -53,4 +53,11 @@ public class QuizManager {
         return score;
     }
 
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
+
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
 }

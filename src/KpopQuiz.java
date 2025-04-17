@@ -1,17 +1,22 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListener {
 
     private QuizManager quizManager;
     private KpopQuizView window;
     private AnswerButton button;
+    private ArrayList<Question> questions;
+
     private Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
     public KpopQuiz() {
         button = new AnswerButton();
+        this.quizManager = new QuizManager("Resources/quiz.txt");
+        this.questions = quizManager.getQuestions();
 
         this.window = new KpopQuizView(button);
 
