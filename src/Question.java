@@ -5,6 +5,12 @@ public class Question {
     private ArrayList<String> choices;
     private String correctAnswer;
 
+    public Question(String questionText, ArrayList<String> choices, String correctAnswer) {
+        this.questionText = questionText;
+        this.choices = choices;
+        this.correctAnswer = correctAnswer;
+    }
+
     public String getQuestionText() {
         return questionText;
     }
@@ -20,5 +26,19 @@ public class Question {
         return false;
     }
 
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
+    }
 
+    public void setChoices(ArrayList<String> choices) {
+        this.choices = choices;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
 }
