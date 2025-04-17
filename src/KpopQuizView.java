@@ -4,6 +4,8 @@ import java.awt.*;
 public class KpopQuizView extends JFrame {
     public static final int WINDOW_WIDTH = 700;
     public static final int WINDOW_HEIGHT = 500;
+    // Constant for the dimensions of the home icon
+    public static final int HOME_DIM = 50;
 
     private final Image home;
 
@@ -43,7 +45,7 @@ public class KpopQuizView extends JFrame {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        g.drawImage(this.home, 5, 30,50, 50,this);
+        g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
 
 
 
