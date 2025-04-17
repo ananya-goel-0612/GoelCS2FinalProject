@@ -8,27 +8,6 @@ public class QuizManager {
     private int currentIndex;
     private int score;
 
-//    public void loadQuestions() {
-//
-//    }
-//
-//    public Question getNextQuestion() {
-//
-//    }
-//
-//    public boolean checkAnswer(String userAnswer) {
-//
-//    }
-//
-//    public int getScore() {
-//
-//    }
-//
-//    public boolean hasNext() {
-//
-//    }
-
-
     public QuizManager(String filename) {
         createQuiz(filename);
     }
@@ -58,5 +37,20 @@ public class QuizManager {
         }
     }
 
+    public Question getNextQuestion() {
+        currentIndex++;
+        return questions.get(currentIndex);
+    }
+
+    public boolean checkAnswer(String userAnswer) {
+        if (questions.get(currentIndex).isCorrect(userAnswer)) {
+            return true;
+        }
+        return false;
+    }
+
+    public int getScore() {
+        return score;
+    }
 
 }

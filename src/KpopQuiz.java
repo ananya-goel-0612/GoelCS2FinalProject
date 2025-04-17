@@ -27,10 +27,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     }
 
-    public static void main(String[] args) {
-        KpopQuiz quiz = new KpopQuiz();
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         window.repaint();
@@ -79,5 +75,9 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             button.setColor(Color.RED);
         }
 
+    }
+
+    public static void main(String[] args) {
+        KpopQuiz quiz = new KpopQuiz();
     }
 }
