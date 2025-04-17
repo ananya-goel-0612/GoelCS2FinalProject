@@ -49,7 +49,6 @@ public class QuizManager {
                 for (int j = 0; j < 3; j++) {
                     choices.add(myReader.nextLine());
                 }
-
                 questions.add(new Question(questionText, choices, correctAnswer));
             }
             myReader.close();
