@@ -47,9 +47,6 @@ public class KpopQuizView extends JFrame {
 
         g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
 
-
-
-
         button.draw(g);
     }
 
