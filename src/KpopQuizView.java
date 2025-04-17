@@ -5,6 +5,7 @@ public class KpopQuizView extends JFrame {
     public static final int WINDOW_WIDTH = 700;
     public static final int WINDOW_HEIGHT = 500;
 
+    private final Image home;
 
     private QuizManager quizManager;
     private AnswerButton button;
@@ -13,6 +14,7 @@ public class KpopQuizView extends JFrame {
     //- scoreLabel: JLabel
 
     public KpopQuizView(AnswerButton button) {
+        this.home = new ImageIcon("Resources/home.png").getImage();
         this.button = button;
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setLocationRelativeTo(null);
@@ -40,6 +42,11 @@ public class KpopQuizView extends JFrame {
     public void paint(Graphics g) {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+        g.drawImage(this.home, 5, 30,50, 50,this);
+
+
+
 
         button.draw(g);
     }
