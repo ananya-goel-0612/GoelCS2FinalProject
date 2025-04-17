@@ -10,6 +10,11 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private AnswerButton button;
     private ArrayList<Question> questions;
 
+    public static final int START = 0;
+    public static final int HOME = 1;
+    public static final int PLAYING = 2;
+    public static final int END = 3;
+
     private Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
