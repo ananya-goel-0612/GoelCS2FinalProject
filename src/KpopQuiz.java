@@ -25,7 +25,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
         this.window = new KpopQuizView(button);
 
-
         this.window.addMouseListener(this);
         this.window.addMouseMotionListener(this);
 
