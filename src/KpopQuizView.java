@@ -7,11 +7,13 @@ public class KpopQuizView extends JFrame {
 
 
     private QuizManager quizManager;
+    private AnswerButton button;
     //- questionLabel: JLabel
     //- buttons: List<JButton>
     //- scoreLabel: JLabel
 
-    public KpopQuizView() {
+    public KpopQuizView(AnswerButton button) {
+        this.button = button;
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setLocationRelativeTo(null);
         this.setTitle("K-pop Quiz!");
@@ -38,6 +40,8 @@ public class KpopQuizView extends JFrame {
     public void paint(Graphics g) {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+        button.draw(g);
     }
 
 }

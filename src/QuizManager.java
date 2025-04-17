@@ -5,24 +5,24 @@ public class QuizManager {
     private int currentIndex;
     private int score;
 
-    public void loadQuestions() {
-
-    }
-
-    public Question getNextQuestion() {
-
-    }
-
-    public boolean checkAnswer(String userAnswer) {
-
-    }
-
-    public int getScore() {
-
-    }
-
-    public boolean hasNext() {
-
-    }
+//    public void loadQuestions() {
+//
+//    }
+//
+//    public Question getNextQuestion() {
+//
+//    }
+//
+//    public boolean checkAnswer(String userAnswer) {
+//
+//    }
+//
+//    public int getScore() {
+//
+//    }
+//
+//    public boolean hasNext() {
+//
+//    }
 
 }
