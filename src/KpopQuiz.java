@@ -20,7 +20,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     public KpopQuiz() {
         state = HOME;
-        button = new AnswerButton();
+        button = new AnswerButton("A");
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
 

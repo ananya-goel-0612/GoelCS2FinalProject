@@ -5,6 +5,7 @@ public class KpopQuizView extends JFrame {
     public static final int WINDOW_WIDTH = 700;
     public static final int WINDOW_HEIGHT = 500;
     // Constant for the dimensions of the home icon
+    public static final int HOME_X = 5;
     public static final int HOME_DIM = 50;
     public static final int BAR_OFFSET = 23;
 
@@ -53,7 +54,7 @@ public class KpopQuizView extends JFrame {
             case KpopQuiz.HOME:
                 break;
             case KpopQuiz.PLAYING:
-                g.drawImage(this.home, 5, BAR_OFFSET + 7, HOME_DIM, HOME_DIM, this);
+                g.drawImage(this.home, HOME_X, BAR_OFFSET + HOME_X, HOME_DIM, HOME_DIM, this);
                 button.draw(g);
                 break;
             case KpopQuiz.END:

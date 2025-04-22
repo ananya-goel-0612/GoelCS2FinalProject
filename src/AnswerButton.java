@@ -5,13 +5,15 @@ public class AnswerButton {
     private int y;
     private int width;
     private int height;
+    private String value;
     private Color color;
 
-    public AnswerButton() {
+    public AnswerButton(String value) {
         this.x = 200;
         this.y = 200;
         this.width = 300;
         this.height = 100;
+        this.value = value;
         this.color = Color.RED;
     }
 
