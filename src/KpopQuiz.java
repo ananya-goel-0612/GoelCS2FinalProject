@@ -52,6 +52,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         int x = e.getX();
         int y = e.getY();
 
+        // If the home button icon was pressed
         if (x >= 5 && x <= 55 && y >= 30 && y <= 80) {
             state = HOME;
         }
