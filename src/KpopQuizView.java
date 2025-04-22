@@ -50,9 +50,9 @@ public class KpopQuizView extends JFrame {
         int state = game.getState();
         switch (state) {
             case KpopQuiz.HOME:
-                g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
                 break;
             case KpopQuiz.PLAYING:
+                g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
                 button.draw(g);
                 break;
             case KpopQuiz.END:
