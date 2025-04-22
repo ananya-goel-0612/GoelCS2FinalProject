@@ -10,20 +10,21 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private AnswerButton button;
     private ArrayList<Question> questions;
 
-    public static final int START = 0;
-    public static final int HOME = 1;
-    public static final int PLAYING = 2;
-    public static final int END = 3;
+    private int state;
+    public static final int HOME = 0;
+    public static final int PLAYING = 1;
+    public static final int END = 2;
 
     private Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
     public KpopQuiz() {
+        state = HOME;
         button = new AnswerButton();
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
 
-        this.window = new KpopQuizView(button);
+        this.window = new KpopQuizView(button, this);
 
         this.window.addMouseListener(this);
         this.window.addMouseMotionListener(this);
@@ -48,7 +49,12 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     @Override
     public void mousePressed(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
 
+        if (x >= 5 && x <= 55 && y >= 30 && y <= 80) {
+            state = HOME;
+        }
     }
 
     @Override
@@ -84,6 +90,10 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             button.setColor(Color.RED);
         }
 
+    }
+
+    public int getState() {
+        return this.state;
     }
 
     public static void main(String[] args) {

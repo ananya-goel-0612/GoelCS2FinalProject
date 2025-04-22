@@ -9,13 +9,15 @@ public class KpopQuizView extends JFrame {
 
     private final Image home;
 
+    private KpopQuiz game;
     private QuizManager quizManager;
     private AnswerButton button;
     //- questionLabel: JLabel
     //- buttons: List<JButton>
     //- scoreLabel: JLabel
 
-    public KpopQuizView(AnswerButton button) {
+    public KpopQuizView(AnswerButton button, KpopQuiz game) {
+        this.game = game;
         this.home = new ImageIcon("Resources/home.png").getImage();
         this.button = button;
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -45,9 +47,17 @@ public class KpopQuizView extends JFrame {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
+        int state = game.getState();
+        switch (state) {
+            case KpopQuiz.HOME:
+                g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
+                break;
+            case KpopQuiz.PLAYING:
+                button.draw(g);
+                break;
+            case KpopQuiz.END:
+                break;
 
-        button.draw(g);
     }
 
 }
