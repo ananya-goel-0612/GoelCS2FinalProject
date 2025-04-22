@@ -52,12 +52,11 @@ public class KpopQuizView extends JFrame {
             case KpopQuiz.HOME:
                 break;
             case KpopQuiz.PLAYING:
-                g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM,this);
+                g.drawImage(this.home, 5, 30, HOME_DIM, HOME_DIM, this);
                 button.draw(g);
                 break;
             case KpopQuiz.END:
                 break;
-
+        }
     }
-
 }
