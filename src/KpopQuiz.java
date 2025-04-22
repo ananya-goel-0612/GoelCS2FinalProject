@@ -78,7 +78,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         int y = e.getY();
 
         if (button.contains(x, y)) {
-            button.setColor(Color.GREEN);
+            button.setColor(Color.BLUE);
         }
         else {
             button.setColor(Color.RED);

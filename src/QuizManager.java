@@ -7,6 +7,7 @@ public class QuizManager {
     private ArrayList<Question> questions;
     private int currentIndex;
     private int score;
+    public static final int NUM_QUESTIONS = 2;
 
     public QuizManager(String filename) {
         createQuiz(filename);
@@ -19,7 +20,7 @@ public class QuizManager {
 
             this.questions = new ArrayList<Question>();
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < NUM_QUESTIONS; i++) {
                 String questionText = myReader.nextLine();
                 String correctAnswer = myReader.nextLine();
                 ArrayList<String> choices = new ArrayList<String>();
@@ -29,6 +30,7 @@ public class QuizManager {
                     choices.add(myReader.nextLine());
                 }
                 questions.add(new Question(questionText, choices, correctAnswer));
+                myReader.nextLine();
             }
             myReader.close();
         } catch (FileNotFoundException e) {
