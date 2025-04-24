@@ -18,17 +18,18 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     public static final int SPACING_Y_BUFFER = 150;
     public static final int SPACING_X_BUFFER = 300;
+    public static final int START_COORDINATE = 500;
 
     private Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
     public KpopQuiz() {
-        state = PLAYING;
+        state = HOME;
         buttons = new AnswerButton[4];
-        buttons[0] = new AnswerButton(500, 500);
-        buttons[1] = new AnswerButton(500 + SPACING_X_BUFFER, 500);
-        buttons[2] = new AnswerButton(500, 500 + SPACING_Y_BUFFER);
-        buttons[3] = new AnswerButton(500 + SPACING_X_BUFFER, 500 + SPACING_Y_BUFFER);
+        buttons[0] = new AnswerButton(START_COORDINATE, START_COORDINATE);
+        buttons[1] = new AnswerButton(START_COORDINATE + SPACING_X_BUFFER, START_COORDINATE);
+        buttons[2] = new AnswerButton(START_COORDINATE, START_COORDINATE + SPACING_Y_BUFFER);
+        buttons[3] = new AnswerButton(START_COORDINATE + SPACING_X_BUFFER, START_COORDINATE + SPACING_Y_BUFFER);
 
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
