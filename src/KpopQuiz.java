@@ -26,6 +26,9 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         button = new AnswerButton(200, 300);
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
+        for (int i = 0; i < 2; i++) {
+            questions.get(i).print();
+        }
 
         this.window = new KpopQuizView(button, this);
 

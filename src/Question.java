@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Question {
     private String questionText;
-    private ArrayList<String> choices;
+    private String[] choices;
     private String correctAnswer;
     private QuizManager quiz;
 
-    public Question(String questionText, ArrayList<String> choices, String correctAnswer, QuizManager quiz) {
+    public Question(String questionText, String[] choices, String correctAnswer, QuizManager quiz) {
         this.questionText = questionText;
         this.choices = choices;
         this.correctAnswer = correctAnswer;
@@ -17,7 +17,7 @@ public class Question {
         return questionText;
     }
 
-    public ArrayList<String> getChoices() {
+    public String[] getChoices() {
         return choices;
     }
 
@@ -31,5 +31,13 @@ public class Question {
 
     public String getCorrectAnswer() {
         return correctAnswer;
+    }
+
+    public void print() {
+        System.out.println(questionText);
+        System.out.println(correctAnswer);
+        for (int i = 0; i < 4; i++) {
+            System.out.println(choices[i]);
+        }
     }
 }

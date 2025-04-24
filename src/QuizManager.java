@@ -23,13 +23,14 @@ public class QuizManager {
             for (int i = 0; i < NUM_QUESTIONS; i++) {
                 String questionText = myReader.nextLine();
                 String correctAnswer = myReader.nextLine();
-                ArrayList<String> choices = new ArrayList<String>();
+                String[] choices = new String[4];
 
-                choices.add(correctAnswer);
-                for (int j = 0; j < 3; j++) {
-                    choices.add(myReader.nextLine());
+                choices[0] = correctAnswer;
+                for (int j = 1; j < 4; j++) {
+                    choices[j] = myReader.nextLine();
                 }
-                questions.add(new Question(questionText, choices, correctAnswer, this));
+                Question question = new Question(questionText, choices, correctAnswer, this);
+                questions.add(question);
                 myReader.nextLine();
             }
             myReader.close();
