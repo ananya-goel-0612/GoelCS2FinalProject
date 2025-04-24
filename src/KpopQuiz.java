@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListener {
@@ -9,6 +10,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private KpopQuizView window;
     private AnswerButton button;
     private ArrayList<Question> questions;
+    private AnswerButton[] buttons;
 
     private int state;
     public static final int HOME = 0;
@@ -20,7 +22,8 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     public KpopQuiz() {
         state = HOME;
-        button = new AnswerButton("A");
+        buttons = new AnswerButton[4];
+        button = new AnswerButton(200, 300);
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
 

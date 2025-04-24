@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class KpopQuizView extends JFrame {
-    public static final int WINDOW_WIDTH = 700;
-    public static final int WINDOW_HEIGHT = 500;
+    public static final int WINDOW_WIDTH = 1500;
+    public static final int WINDOW_HEIGHT = 1000;
     // Constant for the dimensions of the home icon
     public static final int HOME_X = 5;
     public static final int HOME_DIM = 50;

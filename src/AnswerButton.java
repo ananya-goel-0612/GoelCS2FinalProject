@@ -5,15 +5,15 @@ public class AnswerButton {
     private int y;
     private int width;
     private int height;
-    private String value;
+    private String answer;
     private Color color;
 
-    public AnswerButton(String value) {
-        this.x = 200;
-        this.y = 200;
+    public AnswerButton(int x, int y) {
+        this.x = x;
+        this.y = y;
         this.width = 300;
         this.height = 100;
-        this.value = value;
+        this.answer = answer;
         this.color = Color.RED;
     }
 
@@ -69,11 +69,11 @@ public class AnswerButton {
         this.color = color;
     }
 
-    public String getValue() {
-        return this.value;
+    public String getAnswer() {
+        return this.answer;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }
