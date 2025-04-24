@@ -29,7 +29,7 @@ public class QuizManager {
                 for (int j = 0; j < 3; j++) {
                     choices.add(myReader.nextLine());
                 }
-                questions.add(new Question(questionText, choices, correctAnswer));
+                questions.add(new Question(questionText, choices, correctAnswer, this));
                 myReader.nextLine();
             }
             myReader.close();
@@ -39,20 +39,12 @@ public class QuizManager {
         }
     }
 
-    public Question getNextQuestion() {
-        currentIndex++;
-        return questions.get(currentIndex);
-    }
-
-    public boolean checkAnswer(String userAnswer) {
-        if (questions.get(currentIndex).isCorrect(userAnswer)) {
-            return true;
-        }
-        return false;
-    }
-
     public int getScore() {
-        return score;
+        return this.score;
+    }
+
+    public void increaseScore() {
+        this.score++;
     }
 
     public ArrayList<Question> getQuestions() {

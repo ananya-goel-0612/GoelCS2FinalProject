@@ -14,9 +14,6 @@ public class KpopQuizView extends JFrame {
     private KpopQuiz game;
     private QuizManager quizManager;
     private AnswerButton button;
-    //- questionLabel: JLabel
-    //- buttons: List<JButton>
-    //- scoreLabel: JLabel
 
     public KpopQuizView(AnswerButton button, KpopQuiz game) {
         this.game = game;
@@ -30,10 +27,6 @@ public class KpopQuizView extends JFrame {
     }
 
     public void displayQuestion(Question q) {
-
-    }
-
-    public void updateScore() {
 
     }
 
