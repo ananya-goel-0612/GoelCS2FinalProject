@@ -8,7 +8,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     private QuizManager quizManager;
     private KpopQuizView window;
-    private AnswerButton button;
     private ArrayList<Question> questions;
     private AnswerButton[] buttons;
 
@@ -17,20 +16,24 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     public static final int PLAYING = 1;
     public static final int END = 2;
 
+    public static final int SPACING_Y_BUFFER = 150;
+    public static final int SPACING_X_BUFFER = 300;
+
     private Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
     public KpopQuiz() {
-        state = HOME;
+        state = PLAYING;
         buttons = new AnswerButton[4];
-        button = new AnswerButton(200, 300);
+        buttons[0] = new AnswerButton(500, 500);
+        buttons[1] = new AnswerButton(500 + SPACING_X_BUFFER, 500);
+        buttons[2] = new AnswerButton(500, 500 + SPACING_Y_BUFFER);
+        buttons[3] = new AnswerButton(500 + SPACING_X_BUFFER, 500 + SPACING_Y_BUFFER);
+
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
-        for (int i = 0; i < 2; i++) {
-            questions.get(i).print();
-        }
 
-        this.window = new KpopQuizView(button, this);
+        this.window = new KpopQuizView(buttons, this);
 
         this.window.addMouseListener(this);
         this.window.addMouseMotionListener(this);
@@ -90,12 +93,12 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         int x = e.getX();
         int y = e.getY();
 
-        if (button.contains(x, y)) {
-            button.setColor(Color.BLUE);
-        }
-        else {
-            button.setColor(Color.RED);
-        }
+//        if (button.contains(x, y)) {
+//            button.setColor(Color.BLUE);
+//        }
+//        else {
+//            button.setColor(Color.RED);
+//        }
 
     }
 

@@ -11,8 +11,8 @@ public class AnswerButton {
     public AnswerButton(int x, int y) {
         this.x = x;
         this.y = y;
-        this.width = 300;
-        this.height = 100;
+        this.width = 200;
+        this.height = 50;
         this.answer = answer;
         this.color = Color.RED;
     }
