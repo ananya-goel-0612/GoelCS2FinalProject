@@ -47,6 +47,14 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     }
 
+    public void setAnswerChoices(Question question) {
+        String[] choices = question.getChoices();
+
+        for (int i = 0; i < 4; i++) {
+            buttons[i].setValue(choices[i]);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         window.repaint();
