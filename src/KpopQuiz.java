@@ -10,6 +10,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private KpopQuizView window;
     private ArrayList<Question> questions;
     private AnswerButton[] buttons;
+    private AnswerButton start;
 
     private int state;
     public static final int HOME = 0;
@@ -34,7 +35,9 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         this.quizManager = new QuizManager("Resources/quiz.txt");
         this.questions = quizManager.getQuestions();
 
-        this.window = new KpopQuizView(buttons, this);
+        this.start = new AnswerButton(625, 350, 200,200, "START");
+
+        this.window = new KpopQuizView(buttons, this, start);
 
         this.window.addMouseListener(this);
         this.window.addMouseMotionListener(this);
@@ -73,6 +76,10 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         // If the home button icon was pressed
         if (x >= 5 && x <= 55 && y >= 30 && y <= 80) {
             state = HOME;
+        }
+
+        if (start.contains(x, y)) {
+            state = PLAYING;
         }
     }
 

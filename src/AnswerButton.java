@@ -17,9 +17,20 @@ public class AnswerButton {
         this.color = Color.RED;
     }
 
+    public AnswerButton(int x, int y, int width, int height, String value) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.value = value;
+        this.color = Color.RED;
+    }
+
     public void draw(Graphics g) {
         g.setColor(color);
         g.fillRect(x, y, width, height);
+        g.setColor(Color.BLACK);
+        g.drawString(value, x + (width / 2), y + (height / 2));
     }
 
     public boolean contains(int mouseX, int mouseY) {
