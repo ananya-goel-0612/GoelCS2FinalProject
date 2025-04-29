@@ -44,7 +44,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     }
 
     public void start() {
-
+        
     }
 
     public void setAnswerChoices(Question question) {
@@ -102,12 +102,14 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         int x = e.getX();
         int y = e.getY();
 
-//        if (button.contains(x, y)) {
-//            button.setColor(Color.BLUE);
-//        }
-//        else {
-//            button.setColor(Color.RED);
-//        }
+        for (int i = 0; i < 4; i++) {
+            if (buttons[i].contains(x, y)) {
+                buttons[i].setColor(Color.BLUE);
+            }
+            else {
+                buttons[i].setColor(Color.RED);
+            }
+        }
 
     }
 
