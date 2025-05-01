@@ -21,6 +21,8 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     public static final int SPACING_Y_BUFFER = 150;
     public static final int SPACING_X_BUFFER = 300;
     public static final int START_COORDINATE = 500;
+    public static final int NUM_QUESTIONS = 2;
+
 
     private Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
@@ -48,7 +50,15 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     }
 
     public void start() {
-        
+        for (int i = 0; i < NUM_QUESTIONS; i++) {
+            Question currentQuestion = questions.get(i);
+            setAnswerChoices(currentQuestion);
+            askQuestion(currentQuestion);
+        }
+    }
+
+    public void askQuestion(Question question) {
+
     }
 
     // Shuffles the answer choices so that the order is random when appearing on the buttons
