@@ -22,7 +22,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     public static final int SPACING_Y_BUFFER = 150;
     public static final int SPACING_X_BUFFER = 300;
     public static final int START_COORDINATE = 500;
-    public static final int NUM_QUESTIONS = 2;
+    public static final int NUM_QUESTIONS = 10;
 
 
     private Timer clock;
@@ -64,8 +64,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     public void askQuestion(Question question) {
 
     }
-
-
 
     // Shuffles the answer choices so that the order is random when appearing on the buttons
     public static String[] shuffleFour(String[] array) {

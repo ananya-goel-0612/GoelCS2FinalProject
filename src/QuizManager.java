@@ -7,7 +7,7 @@ public class QuizManager {
     private ArrayList<Question> questions;
     private int currentIndex;
     private int score;
-    public static final int NUM_QUESTIONS = 2;
+    public static final int NUM_QUESTIONS = 10;
 
     public QuizManager(String filename) {
         createQuiz(filename);
