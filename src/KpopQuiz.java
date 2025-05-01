@@ -12,6 +12,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private ArrayList<Question> questions;
     private AnswerButton[] buttons;
     private AnswerButton start;
+    private String userAnswer;
 
     private int state;
     public static final int HOME = 0;
@@ -105,6 +106,13 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
         if (start.contains(x, y)) {
             state = PLAYING;
+            start();
+        }
+
+        for (int i = 0; i < 4; i++) {
+            if (buttons[i].contains(x, y)) {
+                userAnswer = buttons[i].getValue();
+            }
         }
     }
 
