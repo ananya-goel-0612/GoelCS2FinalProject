@@ -53,10 +53,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     // Shuffles the answer choices so that the order is random when appearing on the buttons
     public static String[] shuffleFour(String[] array) {
-        if (array.length != 4) {
-            throw new IllegalArgumentException("Array must have exactly 4 elements.");
-        }
-
         Random rand = new Random();
         for (int i = 3; i > 0; i--) {
             int j = rand.nextInt(i + 1);
