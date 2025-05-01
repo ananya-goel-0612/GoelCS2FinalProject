@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListener {
 
@@ -50,8 +51,26 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         
     }
 
+    // Shuffles the answer choices so that the order is random when appearing on the buttons
+    public static String[] shuffleFour(String[] array) {
+        if (array.length != 4) {
+            throw new IllegalArgumentException("Array must have exactly 4 elements.");
+        }
+
+        Random rand = new Random();
+        for (int i = 3; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            String temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        return array;
+    }
+
     public void setAnswerChoices(Question question) {
         String[] choices = question.getChoices();
+        choices = shuffleFour(choices);
 
         for (int i = 0; i < 4; i++) {
             buttons[i].setValue(choices[i]);
