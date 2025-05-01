@@ -1,17 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListener {
 
-    private QuizManager quizManager;
-    private KpopQuizView window;
-    private ArrayList<Question> questions;
-    private AnswerButton[] buttons;
-    private AnswerButton start;
+    private final QuizManager quizManager;
+    private final KpopQuizView window;
+    private final ArrayList<Question> questions;
+    private final AnswerButton[] buttons;
+    private final AnswerButton start;
     private String userAnswer;
 
     private int state;
@@ -25,7 +24,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     public static final int NUM_QUESTIONS = 10;
 
 
-    private Timer clock;
+    private final Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
     public KpopQuiz() {
