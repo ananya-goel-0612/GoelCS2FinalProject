@@ -55,12 +55,17 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             Question currentQuestion = questions.get(i);
             setAnswerChoices(currentQuestion);
             askQuestion(currentQuestion);
+            if (userAnswer != null) {
+                currentQuestion.isCorrect(userAnswer);
+            }
         }
     }
 
     public void askQuestion(Question question) {
 
     }
+
+
 
     // Shuffles the answer choices so that the order is random when appearing on the buttons
     public static String[] shuffleFour(String[] array) {
@@ -112,6 +117,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         for (int i = 0; i < 4; i++) {
             if (buttons[i].contains(x, y)) {
                 userAnswer = buttons[i].getValue();
+                break;
             }
         }
     }

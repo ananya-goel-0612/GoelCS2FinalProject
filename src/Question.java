@@ -19,12 +19,10 @@ public class Question {
         return choices;
     }
 
-    public boolean isCorrect(String input) {
+    public void isCorrect(String input) {
         if (input.equals(correctAnswer)) {
             quiz.increaseScore();
-            return true;
         }
-        return false;
     }
 
     public String getCorrectAnswer() {
