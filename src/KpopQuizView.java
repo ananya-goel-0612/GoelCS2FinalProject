@@ -75,6 +75,7 @@ public class KpopQuizView extends JFrame {
                 g.setColor(Color.BLACK);
                 g.setFont(new Font("Arial", Font.BOLD, 36));
                 g.drawString("Quiz Complete! Your Score: " + game.getScore() + "/10", 500, 400);
+                g.drawImage(this.home, HOME_X, BAR_OFFSET + HOME_X, HOME_DIM, HOME_DIM, this);
                 break;
         }
     }
