@@ -15,6 +15,7 @@ public class KpopQuizView extends JFrame {
     private QuizManager quizManager;
     private AnswerButton[] buttons;
     private AnswerButton start;
+    private Question currentQuestion;
 
     public KpopQuizView(AnswerButton[] buttons, KpopQuiz game, AnswerButton start) {
         this.game = game;
@@ -28,16 +29,17 @@ public class KpopQuizView extends JFrame {
         this.setVisible(true);
     }
 
-    public void displayQuestion(Question q) {
-
+    public void displayQuestion(Question question) {
+        this.currentQuestion = question;
+        repaint();
     }
 
     public void showResult() {
-
+        repaint();
     }
 
     public void setupUI() {
-
+        repaint();
     }
 
     public void paint(Graphics g) {
@@ -47,15 +49,26 @@ public class KpopQuizView extends JFrame {
         int state = game.getState();
         switch (state) {
             case KpopQuiz.HOME:
+                g.setColor(Color.BLACK);
+                g.setFont(new Font("Arial", Font.BOLD, 36));
+                g.drawString("Welcome to the K-pop Quiz!", 500, 200);
                 start.draw(g);
                 break;
             case KpopQuiz.PLAYING:
                 g.drawImage(this.home, HOME_X, BAR_OFFSET + HOME_X, HOME_DIM, HOME_DIM, this);
+                if (currentQuestion != null) {
+                    g.setColor(Color.BLACK);
+                    g.setFont(new Font("Arial", Font.BOLD, 24));
+                    g.drawString(currentQuestion.getQuestionText(), 100, 100);
+                }
                 for (int i = 0; i < 4; i++) {
                     buttons[i].draw(g);
                 }
                 break;
             case KpopQuiz.END:
+                g.setColor(Color.BLACK);
+                g.setFont(new Font("Arial", Font.BOLD, 36));
+                g.drawString("Quiz Complete! Your Score: " + game.getScore() + "/10", 500, 400);
                 break;
         }
     }

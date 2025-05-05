@@ -167,6 +167,10 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         return this.state;
     }
 
+    public int getScore() {
+        return quizManager.getScore();
+    }
+
     public static void main(String[] args) {
         KpopQuiz quiz = new KpopQuiz();
     }
