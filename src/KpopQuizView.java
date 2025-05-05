@@ -12,7 +12,6 @@ public class KpopQuizView extends JFrame {
     private final Image home;
 
     private KpopQuiz game;
-    private QuizManager quizManager;
     private AnswerButton[] buttons;
     private AnswerButton start;
     private Question currentQuestion;
@@ -31,6 +30,9 @@ public class KpopQuizView extends JFrame {
 
     public void displayQuestion(Question question) {
         this.currentQuestion = question;
+        for (int i = 0; i < 4; i++) {
+            buttons[i].setValue(question.getChoices()[i]);
+        }
         repaint();
     }
 
@@ -40,6 +42,10 @@ public class KpopQuizView extends JFrame {
 
     public void setupUI() {
         repaint();
+    }
+
+    public Question getCurrentQuestion() {
+        return currentQuestion;
     }
 
     public void paint(Graphics g) {
