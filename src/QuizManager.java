@@ -44,6 +44,10 @@ public class QuizManager {
         return this.score;
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     public void increaseScore() {
         this.score++;
     }

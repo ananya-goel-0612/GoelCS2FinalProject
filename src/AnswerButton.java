@@ -30,7 +30,7 @@ public class AnswerButton {
         g.setColor(color);
         g.fillRect(x, y, width, height);
         g.setColor(Color.BLACK);
-        g.drawString(value, x + (width / 2), y + (height / 2));
+        g.drawString(value, x + (width / 5), y + (height / 2));
     }
 
     public boolean contains(int mouseX, int mouseY) {
