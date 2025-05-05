@@ -77,7 +77,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             array[i] = array[j];
             array[j] = temp;
         }
-
         return array;
     }
 
@@ -115,10 +114,15 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             start();
         }
 
-        for (int i = 0; i < 4; i++) {
-            if (buttons[i].contains(x, y)) {
-                userAnswer = buttons[i].getValue();
-                break;
+        if (state == PLAYING) {
+            for (int i = 0; i < 4; i++) {
+                if (buttons[i].contains(x, y)) {
+                    userAnswer = buttons[i].getValue();
+                    questions.get(currentQuestionIndex).isCorrect(userAnswer);
+                    currentQuestionIndex++;
+                    showNextQuestion();
+                    break;
+                }
             }
         }
     }
@@ -157,7 +161,6 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
                 buttons[i].setColor(Color.RED);
             }
         }
-
     }
 
     public int getState() {
