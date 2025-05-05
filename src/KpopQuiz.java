@@ -12,6 +12,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private final AnswerButton[] buttons;
     private final AnswerButton start;
     private String userAnswer;
+    private int currentQuestionIndex;
 
     private int state;
     public static final int HOME = 0;
@@ -29,6 +30,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     public KpopQuiz() {
         state = HOME;
+        currentQuestionIndex = 0;
         buttons = new AnswerButton[4];
         buttons[0] = new AnswerButton(START_COORDINATE, START_COORDINATE);
         buttons[1] = new AnswerButton(START_COORDINATE + SPACING_X_BUFFER, START_COORDINATE);
@@ -50,18 +52,20 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     }
 
     public void start() {
-        for (int i = 0; i < NUM_QUESTIONS; i++) {
-            Question currentQuestion = questions.get(i);
-            setAnswerChoices(currentQuestion);
-            askQuestion(currentQuestion);
-            if (userAnswer != null) {
-                currentQuestion.isCorrect(userAnswer);
-            }
-        }
+        currentQuestionIndex = 0;
+        userAnswer = null;
+        showNextQuestion();
     }
 
-    public void askQuestion(Question question) {
-
+    public void showNextQuestion() {
+        if (currentQuestionIndex >= NUM_QUESTIONS) {
+            state = END;
+        }
+        else {
+            Question currentQuestion = questions.get(currentQuestionIndex);
+            setAnswerChoices(currentQuestion);
+            window.displayQuestion(currentQuestion);
+        }
     }
 
     // Shuffles the answer choices so that the order is random when appearing on the buttons
