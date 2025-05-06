@@ -107,7 +107,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         int y = e.getY();
 
         // If the home button icon was pressed
-        if (x >= 5 && x <= 55 && y >= 30 && y <= 80) {
+        if (inHome(x, y)) {
             state = HOME;
             quizManager.setScore(0);
             start();
@@ -132,6 +132,10 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
                 break;
             }
         }
+    }
+
+    public boolean inHome(int x, int y) {
+        return (x >= 5 && x <= 55) && (y >= 30 && y <= 80);
     }
 
     @Override
