@@ -11,6 +11,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private final ArrayList<Question> questions;
     private final AnswerButton[] buttons;
     private final AnswerButton start;
+    private final AnswerButton playAgain;
     private String userAnswer;
     private int currentQuestionIndex;
 
@@ -41,8 +42,9 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         this.questions = quizManager.getQuestions();
 
         this.start = new AnswerButton(625, 350, 200,200, "START");
+        this.playAgain = new AnswerButton(600,500, 350,150, "PLAY AGAIN");
 
-        this.window = new KpopQuizView(buttons, this, start);
+        this.window = new KpopQuizView(buttons, this, start, playAgain);
 
         this.window.addMouseListener(this);
         this.window.addMouseMotionListener(this);
@@ -112,6 +114,11 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         }
 
         if (start.contains(x, y)) {
+            state = PLAYING;
+            start();
+        }
+
+        if (playAgain.contains(x, y)) {
             state = PLAYING;
             start();
         }

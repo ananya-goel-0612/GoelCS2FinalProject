@@ -14,13 +14,15 @@ public class KpopQuizView extends JFrame {
     private KpopQuiz game;
     private AnswerButton[] buttons;
     private AnswerButton start;
+    private AnswerButton playAgain;
     private Question currentQuestion;
 
-    public KpopQuizView(AnswerButton[] buttons, KpopQuiz game, AnswerButton start) {
+    public KpopQuizView(AnswerButton[] buttons, KpopQuiz game, AnswerButton start, AnswerButton playAgain) {
         this.game = game;
         this.start = start;
         this.home = new ImageIcon("Resources/home.png").getImage();
         this.buttons = buttons;
+        this.playAgain = playAgain;
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setLocationRelativeTo(null);
         this.setTitle("K-pop Quiz!");
@@ -76,6 +78,7 @@ public class KpopQuizView extends JFrame {
                 g.setFont(new Font("Arial", Font.BOLD, 36));
                 g.drawString("Quiz Complete! Your Score: " + game.getScore() + "/10", 500, 400);
                 g.drawImage(this.home, HOME_X, BAR_OFFSET + HOME_X, HOME_DIM, HOME_DIM, this);
+                playAgain.draw(g);
                 break;
         }
     }
