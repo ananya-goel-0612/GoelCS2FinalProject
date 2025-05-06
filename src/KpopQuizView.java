@@ -35,15 +35,6 @@ public class KpopQuizView extends JFrame {
         for (int i = 0; i < 4; i++) {
             buttons[i].setValue(question.getChoices()[i]);
         }
-        repaint();
-    }
-
-    public void showResult() {
-        repaint();
-    }
-
-    public void setupUI() {
-        repaint();
     }
 
     public Question getCurrentQuestion() {

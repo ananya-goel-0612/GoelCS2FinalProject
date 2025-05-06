@@ -28,12 +28,4 @@ public class Question {
     public String getCorrectAnswer() {
         return correctAnswer;
     }
-
-    public void print() {
-        System.out.println(questionText);
-        System.out.println(correctAnswer);
-        for (int i = 0; i < 4; i++) {
-            System.out.println(choices[i]);
-        }
-    }
 }

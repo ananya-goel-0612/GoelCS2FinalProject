@@ -111,11 +111,16 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             state = HOME;
             quizManager.setScore(0);
             start();
+            return;
         }
 
-        if (start.contains(x, y) || playAgain.contains(x, y)) {
-            state = PLAYING;
-            start();
+        if (state != PLAYING) {
+            if (start.contains(x, y) || playAgain.contains(x, y)) {
+                state = PLAYING;
+                quizManager.setScore(0);
+                start();
+                return;
+            }
         }
 
         for (int i = 0; i < 4; i++) {
