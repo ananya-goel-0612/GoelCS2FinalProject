@@ -71,7 +71,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     }
 
     // Shuffles the answer choices so that the order is random when appearing on the buttons
-    public static String[] shuffleFour(String[] array) {
+    public static String[] shuffle(String[] array) {
         Random rand = new Random();
         for (int i = 3; i > 0; i--) {
             int j = rand.nextInt(i + 1);
@@ -84,7 +84,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
 
     public void setAnswerChoices(Question question) {
         String[] choices = question.getChoices();
-        choices = shuffleFour(choices);
+        choices = shuffle(choices);
 
         for (int i = 0; i < 4; i++) {
             buttons[i].setValue(choices[i]);
