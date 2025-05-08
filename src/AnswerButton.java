@@ -30,13 +30,17 @@ public class AnswerButton {
         this.color = Color.RED;
     }
 
+    // Method to draw each button
     public void draw(Graphics g) {
+        // Draws the rectangle
         g.setColor(color);
         g.fillRect(x, y, width, height);
+        // Draws the value
         g.setColor(Color.BLACK);
         g.drawString(value, x + (width / 5), y + height / 2 + 10);
     }
 
+    // Checks if the user's mouse is within the boundaries of a button
     public boolean contains(int mouseX, int mouseY) {
         if ((mouseX >= x && mouseX <= x + width) && (mouseY >= y && mouseY <= y + height)) {
             return true;
@@ -44,6 +48,7 @@ public class AnswerButton {
         return false;
     }
 
+    // Getters and setters
     public int getX() {
         return x;
     }
