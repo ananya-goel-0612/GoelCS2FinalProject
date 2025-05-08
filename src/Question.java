@@ -15,6 +15,7 @@ public class Question {
         this.quiz = quiz;
     }
 
+    // Getters
     public String getQuestionText() {
         return questionText;
     }
@@ -23,13 +24,10 @@ public class Question {
         return choices;
     }
 
+    // Checks if the user's answer is correct
     public void isCorrect(String input) {
         if (input.equals(correctAnswer)) {
             quiz.increaseScore();
         }
-    }
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
     }
 }

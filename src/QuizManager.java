@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class QuizManager {
     private ArrayList<Question> questions;
-    private int currentIndex;
     private int score;
     public static final int NUM_QUESTIONS = 10;
 
@@ -16,11 +15,14 @@ public class QuizManager {
         createQuiz(filename);
     }
 
+    // Method to read in all the quiz data from the text file
     private void createQuiz(String filename) {
+        // Got the basic documentation from Ms. Namasivayam's starter code in MazeSolver
         try {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
 
+            // Initializes the AraryList of questions
             this.questions = new ArrayList<Question>();
 
             for (int i = 0; i < NUM_QUESTIONS; i++) {
@@ -32,7 +34,9 @@ public class QuizManager {
                 for (int j = 1; j < 4; j++) {
                     choices[j] = myReader.nextLine();
                 }
+                // Initializes a new question
                 Question question = new Question(questionText, choices, correctAnswer, this);
+                // Adds the created question to the ArrayList
                 questions.add(question);
                 myReader.nextLine();
             }
@@ -43,6 +47,7 @@ public class QuizManager {
         }
     }
 
+    // Getters and Setters
     public int getScore() {
         return this.score;
     }
@@ -57,9 +62,5 @@ public class QuizManager {
 
     public ArrayList<Question> getQuestions() {
         return questions;
-    }
-
-    public int getCurrentIndex() {
-        return currentIndex;
     }
 }
