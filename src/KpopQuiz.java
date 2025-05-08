@@ -56,7 +56,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         this.start = new AnswerButton(625, 350, 200,200, "START");
         this.playAgain = new AnswerButton(600,500, 350,150, "PLAY AGAIN");
 
-        // Initializes the front-end once all of the instance variables have been initialized
+        // Initializes the front-end once all the instance variables have been initialized
         this.window = new KpopQuizView(buttons, this, start, playAgain);
 
         this.window.addMouseListener(this);
