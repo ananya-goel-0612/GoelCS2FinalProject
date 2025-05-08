@@ -1,3 +1,7 @@
+// The front-end class
+// Handles all the graphics
+// Created by Ananya Goel
+
 import javax.swing.*;
 import java.awt.*;
 

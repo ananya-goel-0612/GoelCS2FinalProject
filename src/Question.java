@@ -1,3 +1,7 @@
+// Class to manage each individual question
+// Holds the question, all the answer choices, and the correct answer
+// Created by Ananya Goel
+
 public class Question {
     private String questionText;
     private String[] choices;

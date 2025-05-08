@@ -1,3 +1,7 @@
+// Class to manage all the buttons in the game
+// Holds the location and dimensions of the button, as well as its value
+// Created by Ananya Goel
+
 import java.awt.*;
 
 public class AnswerButton {
