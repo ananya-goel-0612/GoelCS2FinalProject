@@ -91,12 +91,14 @@ public class KpopQuizView extends JFrame {
         // Draws the home icon
         g.drawImage(this.home, HOME_X, BAR_OFFSET + HOME_X, HOME_DIM, HOME_DIM, this);
 
+        // Draws the valid question
         if (currentQuestion != null) {
             g.setColor(Color.BLACK);
             g.setFont(new Font("Arial", Font.BOLD, 24));
             g.drawString(currentQuestion.getQuestionText(), 100, 100);
         }
 
+        // Draws each button with the correct values
         for (int i = 0; i < 4; i++) {
             buttons[i].draw(g);
         }
