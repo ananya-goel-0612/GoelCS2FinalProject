@@ -17,10 +17,10 @@ public class KpopQuizView extends JFrame {
     private final Image home;
 
     // Instance variables from the backend
-    private KpopQuiz game;
-    private AnswerButton[] buttons;
-    private AnswerButton start;
-    private AnswerButton playAgain;
+    private final KpopQuiz game;
+    private final AnswerButton[] buttons;
+    private final AnswerButton start;
+    private final AnswerButton playAgain;
     private Question currentQuestion;
 
     public KpopQuizView(AnswerButton[] buttons, KpopQuiz game, AnswerButton start, AnswerButton playAgain) {

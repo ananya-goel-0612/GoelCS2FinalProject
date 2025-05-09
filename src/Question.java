@@ -3,10 +3,10 @@
 // Created by Ananya Goel
 
 public class Question {
-    private String questionText;
-    private String[] choices;
-    private String correctAnswer;
-    private QuizManager quiz;
+    private final String questionText;
+    private final String[] choices;
+    private final String correctAnswer;
+    private final QuizManager quiz;
 
     public Question(String questionText, String[] choices, String correctAnswer, QuizManager quiz) {
         this.questionText = questionText;

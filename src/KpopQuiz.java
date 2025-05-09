@@ -37,12 +37,12 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
     private final Timer clock;
     public static final int DELAY_IN_MILLISECONDS = 20;
 
-    // Initalizes the game
+    // Initializes the game
     public KpopQuiz() {
         state = HOME;
         currentQuestionIndex = 0;
         buttons = new AnswerButton[4];
-        // Initalizes all 4 buttons for the quiz itself
+        // Initializes all 4 buttons for the quiz itself
         buttons[0] = new AnswerButton(START_COORDINATE, START_COORDINATE);
         buttons[1] = new AnswerButton(START_COORDINATE + SPACING_X_BUFFER, START_COORDINATE);
         buttons[2] = new AnswerButton(START_COORDINATE, START_COORDINATE + SPACING_Y_BUFFER);
@@ -98,7 +98,7 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
             array[i] = array[j];
             array[j] = temp;
         }
-        // Returns a shuffled array of anaswer choices
+        // Returns a shuffled array of answer choices
         return array;
     }
 

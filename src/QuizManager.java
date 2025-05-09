@@ -22,7 +22,7 @@ public class QuizManager {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
 
-            // Initializes the AraryList of questions
+            // Initializes the ArrayList of questions
             this.questions = new ArrayList<Question>();
 
             for (int i = 0; i < NUM_QUESTIONS; i++) {

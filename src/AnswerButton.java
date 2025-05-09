@@ -42,10 +42,7 @@ public class AnswerButton {
 
     // Checks if the user's mouse is within the boundaries of a button
     public boolean contains(int mouseX, int mouseY) {
-        if ((mouseX >= x && mouseX <= x + width) && (mouseY >= y && mouseY <= y + height)) {
-            return true;
-        }
-        return false;
+        return (mouseX >= x && mouseX <= x + width) && (mouseY >= y && mouseY <= y + height);
     }
 
     // Getters and setters
