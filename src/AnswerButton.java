@@ -18,16 +18,16 @@ public class AnswerButton {
         this.width = 200;
         this.height = 50;
         this.value = "";
-        this.color = Color.RED;
+        this.color = Color.BLUE;
     }
 
-    public AnswerButton(int x, int y, int width, int height, String value) {
+    public AnswerButton(int x, int y, int width, int height, String value, Color color) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         this.value = value;
-        this.color = Color.RED;
+        this.color = color;
     }
 
     // Method to draw each button

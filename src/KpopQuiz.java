@@ -53,8 +53,8 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         this.questions = quizManager.getQuestions();
 
         // More buttons
-        this.start = new AnswerButton(625, 350, 200,200, "START");
-        this.playAgain = new AnswerButton(600,500, 350,150, "PLAY AGAIN");
+        this.start = new AnswerButton(625, 350, 200,200, "START", Color.BLUE);
+        this.playAgain = new AnswerButton(600,500, 350,150, "PLAY AGAIN", Color.BLUE);
 
         // Initializes the front-end once all the instance variables have been initialized
         this.window = new KpopQuizView(buttons, this, start, playAgain);
@@ -128,10 +128,10 @@ public class KpopQuiz implements MouseListener, MouseMotionListener, ActionListe
         // To make the mouse location clear
         for (int i = 0; i < 4; i++) {
             if (buttons[i].contains(x, y)) {
-                buttons[i].setColor(Color.BLUE);
+                buttons[i].setColor(Color.RED);
             }
             else {
-                buttons[i].setColor(Color.RED);
+                buttons[i].setColor(Color.BLUE);
             }
         }
     }
