@@ -18,7 +18,7 @@ public class AnswerButton {
         this.width = 200;
         this.height = 50;
         this.value = "";
-        this.color = Color.BLUE;
+        this.color = Color.pink;
     }
 
     public AnswerButton(int x, int y, int width, int height, String value, Color color) {

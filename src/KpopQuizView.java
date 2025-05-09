@@ -69,7 +69,7 @@ public class KpopQuizView extends JFrame {
         // Draws the title
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 36));
-        g.drawString("Welcome to the K-pop Quiz!", 500, 200);
+        g.drawString("Welcome to Ananya's K-pop Quiz!", 450, 200);
         // Draws the start button
         start.draw(g);
     }
