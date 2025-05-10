@@ -15,6 +15,9 @@ public class KpopQuizView extends JFrame {
     public static final int BAR_OFFSET = 23;
 
     private final Image home;
+    private final Image homeBackground;
+    private final Image quizBackground;
+    private final Image endBackground;
 
     // Instance variables from the backend
     private final KpopQuiz game;
@@ -27,6 +30,9 @@ public class KpopQuizView extends JFrame {
         this.game = game;
         this.start = start;
         this.home = new ImageIcon("Resources/home.png").getImage();
+        this.homeBackground = new ImageIcon("Resources/homeBG.png").getImage();
+        this.quizBackground = new ImageIcon("Resources/quizBG.png").getImage();
+        this.endBackground = new ImageIcon("Resources/endBG.png").getImage();
         this.buttons = buttons;
         this.playAgain = playAgain;
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -66,6 +72,8 @@ public class KpopQuizView extends JFrame {
 
     // Method to draw the welcome screen
     public void drawWelcomeScreen(Graphics g) {
+        // Draws the background
+        g.drawImage(homeBackground, 0,0, this);
         // Draws the title
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 36));
@@ -76,6 +84,8 @@ public class KpopQuizView extends JFrame {
 
     // Method to draw the end screen
     public void drawEndScreen(Graphics g) {
+        // Draws the background
+        g.drawImage(endBackground, 0,0,this);
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 36));
         // Displays the user's score
@@ -88,9 +98,10 @@ public class KpopQuizView extends JFrame {
 
     // Method to draw the question and the buttons
     public void drawQuestion(Graphics g) {
+        // Draws the background
+        g.drawImage(quizBackground, 0,0,this);
         // Draws the home icon
         g.drawImage(this.home, HOME_X, BAR_OFFSET + HOME_X, HOME_DIM, HOME_DIM, this);
-
         // Draws the valid question
         if (currentQuestion != null) {
             g.setColor(Color.BLACK);
