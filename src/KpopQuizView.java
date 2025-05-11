@@ -28,13 +28,18 @@ public class KpopQuizView extends JFrame {
 
     public KpopQuizView(AnswerButton[] buttons, KpopQuiz game, AnswerButton start, AnswerButton playAgain) {
         this.game = game;
+
+        // Initialize the buttons
         this.start = start;
+        this.buttons = buttons;
+        this.playAgain = playAgain;
+
+        // Load in the images
         this.home = new ImageIcon("Resources/home.png").getImage();
         this.homeBackground = new ImageIcon("Resources/homeBG.png").getImage();
         this.quizBackground = new ImageIcon("Resources/quizBG.png").getImage();
         this.endBackground = new ImageIcon("Resources/endBG.png").getImage();
-        this.buttons = buttons;
-        this.playAgain = playAgain;
+
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setLocationRelativeTo(null);
         this.setTitle("K-pop Quiz!");
